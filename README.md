@@ -11,3 +11,7 @@ and run # ansible-playbook nginx.yml -i /etc/ansible/hosts
 
 
 
+password for user is generated using openssl for. example
+
+    # openssl passwd -salt '9AvQmC' -1 'Ikwjd$jk249km'
+    here Ikwjd$jk249km  is the password for new user
