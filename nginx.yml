@@ -5,8 +5,12 @@
     vars:
       doc_root: /var/www/example.com
       serverconfig: /jinja2tmp/
-      domain_name: example.com 
+      domain_name: example.com
+      username: user1
+      userpass: $1$9AvQmC$d5v9VuBazYnKjNRkHypXR1
     tasks:
+    - name: create new user
+      user: name={{ username }} password={{ userpass }}  shell="/bin/bash"
     - name: Setup deb nginx source
       apt_repository: repo='deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx' state=present
 
